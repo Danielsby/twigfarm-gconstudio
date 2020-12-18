@@ -2,14 +2,13 @@
 import * as React from "react";
 import SubmitButton from "../components/SubmitButton";
 import InputField from "../components/Inputfields";
-import {Radio,RadioGroup, FormControlLabel, FormControl, Typography} from "@material-ui/core";
+import {Radio,RadioGroup, FormControlLabel, FormControl, Typography, Select} from "@material-ui/core";
 
 type Props = {
   formTitle?: string,
   formDescription?: string,
-  inputInformation?: Array<string>,
+  textFieldDescription?: Array<string>,
   radioButtonsInformation?: Array<string>,
-  buttonInformation?: string,
   inputFieldValue?: Array<string>
 }
 
@@ -100,25 +99,29 @@ class Form extends React.Component<Props, State> {
         <section className="form__fields">
           <p style={{fontSize: "12px"}}>기본정보 입력</p>
           <InputField
-            inputFieldDescription={this.props.inputInformation[0]}
+            textFieldDescription={this.props.textFieldDescription[0]}
             textFieldValue={this.props.textFieldValue[0]}
           />
           <InputField
-            inputFieldDescription={this.props.inputInformation[1]}
+            textFieldDescription={this.props.textFieldDescription[1]}
             textFieldValue={this.props.textFieldValue[1]}
+            select={false}
           />
           <InputField
-            inputFieldDescription={this.props.inputInformation[2]}
+            textFieldDescription={this.props.textFieldDescription[2]}
             textFieldValue={this.props.textFieldValue[2]}
+            select={false}
           />
           <InputField
-            inputFieldDescription={this.props.inputInformation[3]}
+            textFieldDescription={this.props.textFieldDescription[3]}
             textFieldValue={this.props.textFieldValue[3]}
+            select={true}
           />
           <InputField
-            inputFieldDescription={this.props.inputInformation[4]}
+            textFieldDescription={this.props.textFieldDescription[4]}
             textFieldValue={this.props.textFieldValue[4]}
             style={{marginBottom: "10px"}}
+            select={true}
           />
         </section>
 
