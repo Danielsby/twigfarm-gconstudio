@@ -1,0 +1,18 @@
+.twigfarm {
+  height: 100vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-self: center;
+
+  &__content {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-self: center;
+  }
+}

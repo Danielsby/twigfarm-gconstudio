@@ -1,0 +1,26 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+          "title"
+          "radio"
+          "fields"
+          "buttons";
+
+  &__title {
+    grid-area: title;
+  }
+
+  &__radio {
+    grid-area: radio;
+  }
+
+  &__fields {
+    grid-area: fields;
+  }
+
+  &__buttons {
+    grid-area: buttons;
+  }
+}
