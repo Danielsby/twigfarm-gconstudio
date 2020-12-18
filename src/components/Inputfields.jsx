@@ -1,18 +1,28 @@
 //@flow
 import * as React from "react";
 import {TextField} from "@material-ui/core";
-import { red } from "@material-ui/core/colors";
 
 type Props = {
-  inputFieldText: string
+  inputFieldDescription: string,
+  textFieldValue: string,
+  style?: any,
 }
 
 class InputField extends React.Component<Props> {
   render() {
     return (
       <div>
-        <TextField variant="outlined"/>
-        <p style={{color: red[400]}}>{this.props.inputFieldText}</p>
+        <TextField
+          className="input-field"
+          variant="outlined"
+          value={this.props.textFieldValue}
+        />
+        <p
+          className="input-field-description"
+          style={this.props.style}
+        >
+          {this.props.inputFieldDescription}
+        </p>
       </div>
     )
   }

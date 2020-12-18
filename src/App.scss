@@ -1,18 +1,72 @@
+// I added everything in this file because this project is small.
+// In a bigger project I would split this up much better.
 .twigfarm {
-  height: 100vh;
+  height: 98vh;
   display: flex;
-  align-content: center;
   justify-content: center;
   justify-items: center;
-  justify-self: center;
-  align-self: center;
+  font-family: Arial, serif;
 
   &__content {
     display: flex;
     align-content: center;
-    justify-content: center;
-    justify-items: center;
-    justify-self: center;
+    width: 600px;
     align-self: center;
+  }
+
+  .login {
+    height: 19px;
+    margin: 23px 30.4px 9px 15px;
+    text-decoration: underline;
+    letter-spacing: 0.15px;
+  }
+
+  .headline {
+    font-size: 24px;
+    color: #2f2f2f;
+    height: 29px;
+    margin: 0 215px 13px 0;
+    font-weight: bold;
+  }
+  .description {
+    font-size: 16px;
+  }
+
+  .radio-button {
+    font-size: 14px;
+    color: #212121;
+  }
+
+  .button-submit {
+    width: 91px;
+    height: 37px;
+    margin: 15px 6.4px 0 0;
+    color: white;
+    background-color: #f15642;
+  }
+
+  .input-field {
+    width: 440px;
+    height: 55px;
+  }
+
+  .input-field-description {
+    font-size: 12px;
+    font-family: AppleSDGothicNeo, serif;
+    margin: 6px 0 25px 11px;
+    color: #ff0000;
+  }
+
+  .form__buttons {
+    display: flex;
+    align-content: flex-start;
+    align-self: flex-start;
+    align-items: flex-start;
+  }
+
+  .form {
+    border: 1px solid #dadce0;
+    border-radius: 20px;
+    padding: 55px;
   }
 }

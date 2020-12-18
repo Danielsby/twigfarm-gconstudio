@@ -12,6 +12,14 @@ class App extends React.Component {
     "필수 입려사항입니다"
   ]
 
+  textFieldValue = [
+    "이메일(아이디)를 업력하세요",
+    "비밀번호를 입력하세요",
+    "회사명을 입력하세요",
+    "화페단위를 선택하세요",
+    "설립일을 선택하세요"
+  ]
+
   render() {
     const formTitle = "Gconstudio 졔정 만들기";
     const formDescription = "하나의 계정으로 모든 지콘스튜디오 서비스를 이용할 수 있습니다";
@@ -22,6 +30,7 @@ class App extends React.Component {
             formTitle={formTitle}
             inputInformation={this.inputInformation}
             formDescription={formDescription}
+            textFieldValue={this.textFieldValue}
           />
         </main>
       </div>

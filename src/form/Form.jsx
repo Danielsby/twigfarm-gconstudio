@@ -2,14 +2,15 @@
 import * as React from "react";
 import SubmitButton from "../components/SubmitButton";
 import InputField from "../components/Inputfields";
-import {Radio,RadioGroup, FormControlLabel, FormControl, FormLabel} from "@material-ui/core";
+import {Radio,RadioGroup, FormControlLabel, FormControl, Typography} from "@material-ui/core";
 
 type Props = {
   formTitle?: string,
   formDescription?: string,
   inputInformation?: Array<string>,
   radioButtonsInformation?: Array<string>,
-  buttonInformation?: string
+  buttonInformation?: string,
+  inputFieldValue?: Array<string>
 }
 
 type State = {
@@ -37,49 +38,93 @@ class Form extends React.Component<Props, State> {
     return (
       <div className="form">
         <header className="form__title">
-          <h2>{this.props.formTitle}</h2>
-          <p>{this.props.formDescription}</p>
+          <h2 className="headline">{this.props.formTitle}</h2>
+          <p className="description">{this.props.formDescription}</p>
         </header>
 
         <section className="form__radio">
           <FormControl>
             <RadioGroup row value={selectedValue} onChange={this.handleChange}>
               <FormControlLabel
-                checked={selectedValue === "a"}
-                value="a"
+                className="radio-button"
+                checked={selectedValue === "company"}
+                value="company"
                 control={<Radio />}
                 labelPlacement="right"
-                label="번역회사"
+                label={
+                  <Typography
+                    variant="text"
+                    component="p"
+                    style={selectedValue === "company" ? {fontWeight: "bold"} : null}
+                  >
+                    번역회사
+                  </Typography>
+                }
               />
               <FormControlLabel
-                checked={selectedValue === "b"}
-                value="b"
+                className="radio-button"
+                checked={selectedValue === "client"}
+                value="client"
                 control={<Radio />}
                 labelPlacement="right"
-                label="의뢰인"
+                label={
+                  <Typography
+                    variant="text"
+                    component="p"
+                    style={selectedValue === "client" ? {fontWeight: "bold"} : null}
+                  >
+                    의뢰인
+                  </Typography>
+                }
               />
               <FormControlLabel
-                checked={selectedValue === "c"}
-                value="c"
+                className="radio-button"
+                checked={selectedValue === "translator"}
+                value="translator"
                 control={<Radio />}
                 labelPlacement="right"
-                label="번역가"
+                label={
+                  <Typography
+                    variant="text"
+                    component="p"
+                    style={selectedValue === "translator" ? {fontWeight: "bold"} : null}
+                  >
+                    번역가
+                  </Typography>
+                }
               />
             </RadioGroup>
           </FormControl>
         </section>
 
         <section className="form__fields">
-          <p>기본정보 입력</p>
-          <InputField inputFieldText={this.props.inputInformation[0]}/>
-          <InputField inputFieldText={this.props.inputInformation[1]}/>
-          <InputField inputFieldText={this.props.inputInformation[2]}/>
-          <InputField inputFieldText={this.props.inputInformation[3]}/>
-          <InputField inputFieldText={this.props.inputInformation[4]}/>
+          <p style={{fontSize: "12px"}}>기본정보 입력</p>
+          <InputField
+            inputFieldDescription={this.props.inputInformation[0]}
+            textFieldValue={this.props.textFieldValue[0]}
+          />
+          <InputField
+            inputFieldDescription={this.props.inputInformation[1]}
+            textFieldValue={this.props.textFieldValue[1]}
+          />
+          <InputField
+            inputFieldDescription={this.props.inputInformation[2]}
+            textFieldValue={this.props.textFieldValue[2]}
+          />
+          <InputField
+            inputFieldDescription={this.props.inputInformation[3]}
+            textFieldValue={this.props.textFieldValue[3]}
+          />
+          <InputField
+            inputFieldDescription={this.props.inputInformation[4]}
+            textFieldValue={this.props.textFieldValue[4]}
+            style={{marginBottom: "10px"}}
+          />
         </section>
 
         <article className="form__buttons">
           <SubmitButton />
+          <span className="login">로그인</span>
         </article>
       </div>
     )
