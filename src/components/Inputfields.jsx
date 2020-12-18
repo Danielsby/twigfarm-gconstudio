@@ -1,6 +1,6 @@
 //@flow
 import * as React from "react";
-import {TextField, Select, MenuItem, FormControl, InputLabel, Typography} from "@material-ui/core";
+import {TextField, Select, FormControl, InputLabel, Typography} from "@material-ui/core";
 
 type Props = {
   textFieldDescription: string,
