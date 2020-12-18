@@ -2,7 +2,7 @@
 import * as React from "react";
 import SubmitButton from "../components/SubmitButton";
 import InputField from "../components/Inputfields";
-import {Radio,RadioGroup, FormControlLabel, FormControl, Typography, Select} from "@material-ui/core";
+import {Radio,RadioGroup, FormControlLabel, FormControl, Typography} from "@material-ui/core";
 
 type Props = {
   formTitle?: string,
